@@ -12,17 +12,22 @@ app.use(function(req,res,next){
     next()
 });
 
-const rest_Category = require("./routes/category");
+app.listen(3000, () => {
+  console.log('Start server at port 3000.');
+  console.log('run==>http://localhost:3000/')
+})
 
-app.use('/api',rest_Category);
+
+const RS_Category = require("./routes/category");
+app.use('/api',RS_Category);
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
- })
+const RS_CategoryType = require("./routes/categoryType");
+app.use('/api',RS_CategoryType);
+
+
+const RS_procest = require("./routes/product");
+app.use('/api',RS_procest);
+
 
   
-  app.listen(3000, () => {
-    console.log('Start server at port 3000.');
-    console.log('run==>http://localhost:3000/')
-  })

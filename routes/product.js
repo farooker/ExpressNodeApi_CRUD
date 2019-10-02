@@ -7,7 +7,6 @@ router.get("/product",function(req,res){
     var sql = RS_sql.Sql_GetAll();
     query.QueryRead(res,sql);
 });
-
 router.get("/product/:id",function(req,res){
     var id = req.params.id;
     var sql = RS_sql.Sql_GetById(id);

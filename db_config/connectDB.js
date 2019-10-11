@@ -17,5 +17,4 @@ var con = mysql.createConnection({
         password: "",
         database: "compareprice"
     },
-  
 }
